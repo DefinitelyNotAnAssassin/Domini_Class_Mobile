@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="265dp" />
+        tools:layout_editor_absoluteY="265dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnViewCourses"
@@ -49,8 +50,8 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constrsaintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="626dp" />
+        tools:layout_editor_absoluteY="626dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -59,7 +60,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="181dp" />
+        tools:layout_editor_absoluteY="181dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -68,13 +70,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="364dp" />
+        tools:layout_editor_absoluteY="364dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="167dp"
         android:layout_height="84dp"
         tools:layout_editor_absoluteX="215dp"
-        tools:layout_editor_absoluteY="542dp" />
+        tools:layout_editor_absoluteY="542dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

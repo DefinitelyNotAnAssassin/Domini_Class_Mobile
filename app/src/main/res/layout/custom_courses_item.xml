@@ -9,7 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="411dp"
         android:layout_height="174dp"
-        android:background="@drawable/course_item">
+        android:background="@drawable/course_item"
+        android:clickable="true">
 
         <TextView
             android:id="@+id/tvCourseName"
