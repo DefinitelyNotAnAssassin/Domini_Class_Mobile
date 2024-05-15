@@ -5,35 +5,48 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCE1FF"
+    android:background="@drawable/enroll_course"
+    android:layout_marginTop="30dp"
     tools:context=".enroll_course">
 
 
-    <Button
-        android:id="@+id/btnSwitchToClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#0086CA"
-        android:text="Join Course"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="303dp"
+        android:layout_height="283dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="341dp"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/etCourseId"
-        android:layout_width="231dp"
-        android:layout_height="51dp"
-        android:hint="Enter Course Id"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="276dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
 
 
+        <Button
+            android:id="@+id/btnSwitchToClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:backgroundTint="#0086CA"
+            android:text="Join Course"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/etCourseId"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/etCourseId"
+            app:layout_constraintTop_toBottomOf="@+id/etCourseId"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etCourseId"
+            android:layout_width="231dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/white"
+            android:hint="214AW56 - 24D5 - SH2JN4"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="36dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
