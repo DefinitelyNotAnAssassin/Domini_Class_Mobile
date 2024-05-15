@@ -21,7 +21,7 @@
             android:name=".TrackActivities"
             android:exported="false" />
         <activity
-            android:name=".custom_activity_page"
+            android:name=".CustomActivityPage"
             android:exported="false" />
         <activity
             android:name=".course_page"
@@ -33,22 +33,19 @@
             android:name=".FinishedActivities"
             android:exported="false" />
         <activity
-            android:name=".enroll_course"
+            android:name=".EnrollCourse"
             android:exported="false" />
         <activity
-            android:name=".empty_course_page"
+            android:name=".EmptyCoursePage"
             android:exported="false" />
         <activity
             android:name=".CourseList"
             android:exported="false" />
         <activity
-            android:name=".Courses_main"
+            android:name=".CoursesMain"
             android:exported="false" />
         <activity
             android:name=".Registration"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

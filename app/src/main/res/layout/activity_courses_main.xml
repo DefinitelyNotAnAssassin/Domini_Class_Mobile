@@ -8,7 +8,7 @@
     android:background="@drawable/course_main"
     android:layout_marginTop="30dp"
     android:orientation="vertical"
-    tools:context=".Courses_main">
+    tools:context=".CoursesMain">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

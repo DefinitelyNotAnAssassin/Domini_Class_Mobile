@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/enroll_course"
     android:layout_marginTop="30dp"
-    tools:context=".enroll_course">
+    tools:context=".EnrollCourse">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

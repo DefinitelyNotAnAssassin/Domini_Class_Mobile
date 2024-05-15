@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class custom_activity_page extends AppCompatActivity {
+public class CustomActivityPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

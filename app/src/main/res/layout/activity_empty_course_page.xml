@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="30dp"
     android:background="@drawable/empty_course_page"
-    tools:context=".empty_course_page">
+    tools:context=".EmptyCoursePage">
 
     <Button
         android:id="@+id/btnSwitchToCourseList"

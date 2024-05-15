@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -21,7 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Courses_main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class CoursesMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -75,13 +74,13 @@ public class Courses_main extends AppCompatActivity implements NavigationView.On
         if (id == R.id.homeMenu) {
             // Handle homeMenu
         } else if (id == R.id.joinCourseMenu) {
-            Intent intent = new Intent(Courses_main.this, enroll_course.class);
+            Intent intent = new Intent(CoursesMain.this, EnrollCourse.class);
             startActivity(intent);
         } else if (id == R.id.finishedActsMenu) {
-            Intent intent = new Intent(Courses_main.this, FinishedActivities.class);
+            Intent intent = new Intent(CoursesMain.this, FinishedActivities.class);
             startActivity(intent);
         } else if (id == R.id.missingActsMenu) {
-            Intent intent = new Intent(Courses_main.this, MissingActivities.class);
+            Intent intent = new Intent(CoursesMain.this, MissingActivities.class);
             startActivity(intent);
         }
 

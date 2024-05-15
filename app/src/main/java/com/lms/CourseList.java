@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -45,7 +44,7 @@ public class CourseList extends AppCompatActivity implements NavigationView.OnNa
         //hooks
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.nav_view);
-        // pano to? toolbar = findViewById(R.id.toolbar);
+       // toolbar = findViewById(R.id.toolbar);
 
 
         //toolbar
@@ -76,7 +75,7 @@ public class CourseList extends AppCompatActivity implements NavigationView.OnNa
         if (id == R.id.homeMenu) {
             // Handle homeMenu
         } else if (id == R.id.joinCourseMenu) {
-            Intent intent = new Intent(CourseList.this, enroll_course.class);
+            Intent intent = new Intent(CourseList.this, EnrollCourse.class);
             startActivity(intent);
         } else if (id == R.id.finishedActsMenu) {
             Intent intent = new Intent(CourseList.this, FinishedActivities.class);
