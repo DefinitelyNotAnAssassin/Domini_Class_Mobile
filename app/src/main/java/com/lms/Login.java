@@ -63,6 +63,7 @@ public class Login extends AppCompatActivity {
 
                             if(jsonResponse.get("message").equals("Login successful")) {
                                 Intent intent = new Intent(Login.this, CoursesMain.class);
+                                intent.putExtra("currentUser", jsonResponse.get("currentUser").toString() );
                                 startActivity(intent);
                             }
                             else{

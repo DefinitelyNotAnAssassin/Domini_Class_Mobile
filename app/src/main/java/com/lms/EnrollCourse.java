@@ -28,7 +28,7 @@ public class EnrollCourse extends AppCompatActivity {
 
     EditText etCourseId;
     Button btnSwitchToJoinCourse;
-
+    String currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,9 @@ public class EnrollCourse extends AppCompatActivity {
             return insets;
         });
 
+        Intent i = getIntent();
+        currentUser = i.getStringExtra("currentUser");
+
         etCourseId = findViewById(R.id.etCourseId);
         btnSwitchToJoinCourse = findViewById(R.id.btnSwitchToJoinCourse);
 
@@ -50,13 +53,22 @@ public class EnrollCourse extends AppCompatActivity {
         btnSwitchToJoinCourse.setOnClickListener(v -> {
             StringRequest request = new StringRequest(
                     Request.Method.POST,
-                    "http://192.168.1.6:8000/login",
+                    "http://192.168.1.6:8000/course/enroll/",
                     response -> {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             System.out.println(jsonResponse);
-                            Intent intent = new Intent(EnrollCourse.this, CourseList.class);
-                            startActivity(intent);
+
+                            if (jsonResponse.getString("message").equals("Course does not exist")) {
+                                Toast.makeText(EnrollCourse.this, "Course does not exist", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            else{
+                                Intent intent = new Intent(EnrollCourse.this, CourseList.class);
+                                intent.putExtra("currentUser", currentUser);
+                                startActivity(intent);
+                            }
+
 
 
                         } catch (JSONException e) {
@@ -74,6 +86,7 @@ public class EnrollCourse extends AppCompatActivity {
                 protected Map<String, String> getParams() {
                     Map<String, String> params = new HashMap<>();
                     params.put("course_code", etCourseId.getText().toString());
+                    params.put("currentUser", currentUser);
                     return params;
                 }
             };

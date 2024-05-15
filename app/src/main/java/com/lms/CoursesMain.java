@@ -31,7 +31,7 @@ public class CoursesMain extends AppCompatActivity {
     TextView textView;
     Button btnSwitchToEnrollCourse;
     Button btnSwitchToCourseList;
-
+    String currentUser;
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -45,11 +45,22 @@ public class CoursesMain extends AppCompatActivity {
             return insets;
         });
 
+        Intent i = getIntent();
+        currentUser = i.getStringExtra("currentUser");
+
+
         btnSwitchToEnrollCourse = findViewById(R.id.btnSwitchToEnrollCourse);
         btnSwitchToCourseList = findViewById(R.id.btnSwitchToCourseList);
 
         btnSwitchToEnrollCourse.setOnClickListener(v -> {
             Intent intent = new Intent(CoursesMain.this, EnrollCourse.class);
+            intent.putExtra("currentUser", currentUser);
+            startActivity(intent);
+        });
+
+        btnSwitchToCourseList.setOnClickListener(v -> {
+            Intent intent = new Intent(CoursesMain.this, CourseList.class);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
