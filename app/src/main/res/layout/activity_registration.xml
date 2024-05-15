@@ -9,53 +9,44 @@
     android:background="@drawable/registration_backg"
     tools:context=".Registration">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="300dp"
-        android:layout_height="450dp"
+    <LinearLayout
+        android:layout_width="301dp"
+        android:layout_height="485dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.629">
+        app:layout_constraintVertical_bias="0.435">
 
         <EditText
             android:id="@+id/etFNameReg"
             android:layout_width="237dp"
             android:layout_height="30dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="40dp"
             android:background="@color/white"
             android:hint="First Name"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/etStudentNumReg"
             android:layout_width="237dp"
             android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:hint="Student Number"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@+id/etLNameReg"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/etLNameReg"
-            tools:layout_editor_absoluteY="219dp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/etPasswordReg"
             android:layout_width="237dp"
             android:layout_height="30dp"
+            android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:hint="Password"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@+id/etStudentNumReg"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="@+id/etStudentNumReg"
-            tools:layout_editor_absoluteY="297dp"
-            tools:ignore="MissingConstraints" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/etLNameReg"
@@ -63,28 +54,21 @@
             android:layout_height="30dp"
             android:background="@color/white"
             android:hint="Last Name"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@+id/etFNameReg"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/etFNameReg"
-            tools:layout_editor_absoluteY="138dp"
-            tools:ignore="MissingConstraints" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:backgroundTint="#0086CA"
             android:text="Sign Up"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="35dp"
-            tools:layout_editor_absoluteY="362dp"
-            tools:ignore="MissingConstraints" />
+            android:textStyle="bold" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
