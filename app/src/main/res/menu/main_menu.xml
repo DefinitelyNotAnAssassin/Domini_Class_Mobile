@@ -18,8 +18,8 @@
                     android:id="@+id/missingActsMenu"
                     android:title="Missing Activities"/>
                 <item
-                    android:id="@+id/pendingActsMenu"
-                    android:title="Pending Activities"/>
+                    android:id="@+id/gradesMenu"
+                    android:title="Grades"/>
         <item
             android:id="@+id/logoutMenu"
             android:title="Logout"/>

@@ -15,6 +15,18 @@
         android:theme="@style/Theme.LMS"
         tools:targetApi="31">
         <activity
+            android:name=".LessonPage"
+            android:exported="false" />
+        <activity
+            android:name=".TrackActivities"
+            android:exported="false" />
+        <activity
+            android:name=".custom_activity_page"
+            android:exported="false" />
+        <activity
+            android:name=".course_page"
+            android:exported="false" />
+        <activity
             android:name=".MissingActivities"
             android:exported="false" />
         <activity

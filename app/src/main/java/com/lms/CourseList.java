@@ -45,7 +45,7 @@ public class CourseList extends AppCompatActivity implements NavigationView.OnNa
         //hooks
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
+        // pano to? toolbar = findViewById(R.id.toolbar);
 
 
         //toolbar
