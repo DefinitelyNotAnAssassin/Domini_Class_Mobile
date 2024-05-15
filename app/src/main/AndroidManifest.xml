@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LMS"
         tools:targetApi="31">
         <activity
+            android:name=".ViewGrades"
+            android:exported="false" />
+        <activity
             android:name=".LessonPage"
             android:exported="false" />
         <activity
