@@ -45,12 +45,12 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/btnSwitchToViewCourses"
+                app:layout_constraintStart_toEndOf="@+id/btnSwitchToCourseList"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteY="386dp" />
 
             <Button
-                android:id="@+id/btnSwitchToViewCourses"
+                android:id="@+id/btnSwitchToCourseList"
                 android:layout_width="169dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="136dp"
