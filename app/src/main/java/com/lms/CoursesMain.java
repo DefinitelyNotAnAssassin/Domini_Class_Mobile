@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -20,13 +22,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class CoursesMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class CoursesMain extends AppCompatActivity {
 
-    DrawerLayout drawerLayout;
+    ConstraintLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     Menu menu;
     TextView textView;
+    Button btnSwitchToEnrollCourse;
+    Button btnSwitchToCourseList;
+
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -34,59 +39,28 @@ public class CoursesMain extends AppCompatActivity implements NavigationView.OnN
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_courses_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawerLayout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        //hooks
-        drawerLayout = findViewById(R.id.drawerLayout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.btnLogin);
+        btnSwitchToEnrollCourse = findViewById(R.id.btnSwitchToEnrollCourse);
+        btnSwitchToCourseList = findViewById(R.id.btnSwitchToCourseList);
 
-
-        //toolbar
-        setSupportActionBar(toolbar);
-
-
-        //nav drawer
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-    }
-
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-
-        if (id == R.id.homeMenu) {
-            // Handle homeMenu
-        } else if (id == R.id.joinCourseMenu) {
+        btnSwitchToEnrollCourse.setOnClickListener(v -> {
             Intent intent = new Intent(CoursesMain.this, EnrollCourse.class);
             startActivity(intent);
-        } else if (id == R.id.finishedActsMenu) {
-            Intent intent = new Intent(CoursesMain.this, FinishedActivities.class);
-            startActivity(intent);
-        } else if (id == R.id.missingActsMenu) {
-            Intent intent = new Intent(CoursesMain.this, MissingActivities.class);
-            startActivity(intent);
-        }
+        });
 
 
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+
+
+
+
+
 
     }
-}
+
+
+    }
