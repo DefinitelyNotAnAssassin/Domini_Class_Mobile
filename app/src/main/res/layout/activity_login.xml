@@ -54,7 +54,7 @@
             android:backgroundTint="#0086CA"
             android:text="Log in"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="19dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
