@@ -1,12 +1,17 @@
 package com.lms;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.lms.R;
 
@@ -50,12 +55,18 @@ public class CustomCoursesItemAdapter extends BaseAdapter {
         Map<String, String> course = courses.get(i);
 
         view = inflater.inflate(R.layout.custom_courses_item,null);
-
+        ConstraintLayout clCourseItem = view.findViewById(R.id.clCourseItem);
         TextView tvCourseName = view.findViewById(R.id.tvCourseName);
         TextView tvCourseDescription = view.findViewById(R.id.tvCourseDescription);
 
         tvCourseName.setText(course.get("courseName"));
         tvCourseDescription.setText(course.get("courseDescription"));
+
+        clCourseItem.setOnClickListener(v -> {
+            Intent intent = new Intent(context, CoursePage.class);
+            intent.putExtra("courseId", course.get("id"));
+            startActivity(context, intent, null);
+        });
         return view;
     }
 }
