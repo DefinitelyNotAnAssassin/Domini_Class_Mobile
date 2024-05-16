@@ -24,12 +24,13 @@ public class CustomCoursesItemAdapter extends BaseAdapter {
     public ArrayList<Map<String, String>> courses = new ArrayList<>();
 
     LayoutInflater inflater;
+    String currentUser;
 
-
-    public CustomCoursesItemAdapter(Context context, ArrayList<Map<String, String>> courses)
+    public CustomCoursesItemAdapter(Context context, ArrayList<Map<String, String>> courses, String currentUser)
     {
         this.context = context;
         this.courses = courses;
+        this.currentUser = currentUser;
 
         inflater = LayoutInflater.from(context);
     }
@@ -65,6 +66,7 @@ public class CustomCoursesItemAdapter extends BaseAdapter {
         clCourseItem.setOnClickListener(v -> {
             Intent intent = new Intent(context, CoursePage.class);
             intent.putExtra("courseId", course.get("id"));
+            intent.putExtra("currentUser", currentUser);
             startActivity(context, intent, null);
         });
         return view;

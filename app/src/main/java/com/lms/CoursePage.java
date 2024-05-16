@@ -27,6 +27,7 @@ public class CoursePage extends AppCompatActivity {
 
 
     String courseId;
+    String currentUser;
 
 
     ArrayList<Map<String, String>> courseMaterials = new ArrayList<>();
@@ -46,6 +47,7 @@ public class CoursePage extends AppCompatActivity {
         });
 
         courseId = getIntent().getStringExtra("courseId");
+        currentUser = getIntent().getStringExtra("currentUser");
         lvForLessons = findViewById(R.id.lvForLessons);
         lvForActivities = findViewById(R.id.lvForActivities);
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -53,7 +55,7 @@ public class CoursePage extends AppCompatActivity {
 
         StringRequest request = new StringRequest(
                 Request.Method.POST,
-                "http://192.168.1.6:8000/course/getCourse/"+courseId,
+                "http://dominiclass.pythonanywhere.com/course/getCourse/"+courseId,
                 response -> {
                     try {
                         // Parse the JSON response
@@ -91,8 +93,8 @@ public class CoursePage extends AppCompatActivity {
 
 
 
-                        lvForActivities.setAdapter(new CustomCurrentActivityAdapter(this, courseActivities));
-                        lvForLessons.setAdapter(new CustomCurrentCourseLessonAdapter(this, courseMaterials));
+                        lvForActivities.setAdapter(new CustomCurrentActivityAdapter(this, courseActivities, currentUser));
+                        lvForLessons.setAdapter(new CustomCurrentCourseLessonAdapter(this, courseMaterials, currentUser));
                         System.out.println(courseMaterials);
                         System.out.println(courseActivities);
 
