@@ -34,9 +34,7 @@
         <activity
             android:name=".TrackActivities"
             android:exported="false" />
-        <activity
-            android:name=".CustomActivityPage"
-            android:exported="false" />
+
         <activity
             android:name=".CoursePage"
             android:exported="false" />

@@ -18,10 +18,11 @@ public class CustomCurrentCourseLessonAdapter extends BaseAdapter {
     ArrayList<Map<String, String>> lessons = new ArrayList<>();
 
     LayoutInflater inflater;
+    String currentUser;
 
-
-    public CustomCurrentCourseLessonAdapter(Context context, ArrayList<Map<String, String>> lessons)
+    public CustomCurrentCourseLessonAdapter(Context context, ArrayList<Map<String, String>> lessons, String currentUser)
     {
+        this.currentUser = currentUser;
         this.context = context;
         this.lessons = lessons;
         inflater = LayoutInflater.from(context);
@@ -53,8 +54,9 @@ public class CustomCurrentCourseLessonAdapter extends BaseAdapter {
         tvCurrentCourseLessonTitle.setText(currentLesson.get("name"));
 
         tvCurrentCourseLessonTitle.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ActivityPage.class);
+            Intent intent = new Intent(context, LessonPage.class);
             intent.putExtra("lessonId", currentLesson.get("id"));
+            intent.putExtra("currentUser", currentUser);
             context.startActivity(intent);
         });
         return view;
