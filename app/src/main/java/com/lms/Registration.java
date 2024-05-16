@@ -40,7 +40,7 @@ public class Registration extends AppCompatActivity {
         last_name = findViewById(R.id.etLNameReg);
         btnSignUp = findViewById(R.id.btnSignUp);
 
-        String url = "192.168.1.6:8000/register";
+        String url = "dominiclass.pythonanywhere.com/register";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         btnSignUp.setOnClickListener(v -> {
