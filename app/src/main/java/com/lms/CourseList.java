@@ -69,7 +69,7 @@ public class CourseList extends AppCompatActivity {
 
         StringRequest request = new StringRequest(
                 Request.Method.POST,
-                "http://192.168.1.6:8000/course/getCourse",
+                "http://dominiclass.pythonanywhere.com/course/getCourse",
                 response -> {
                  try {
     JSONObject jsonResponse = new JSONObject(response);
