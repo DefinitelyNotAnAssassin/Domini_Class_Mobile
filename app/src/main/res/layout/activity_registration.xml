@@ -9,65 +9,87 @@
     android:background="@drawable/registration_backg"
     tools:context=".Registration">
 
+
     <LinearLayout
-        android:layout_width="301dp"
-        android:layout_height="485dp"
-        android:gravity="center"
+        android:layout_width="232dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435">
+        app:layout_constraintVertical_bias="0.632">
 
         <EditText
             android:id="@+id/etFNameReg"
-            android:layout_width="237dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:hint="First Name"
-            android:textSize="15sp" />
+            android:paddingStart="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/etLNameReg"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="@+id/etLNameReg"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etStudentNumReg"
-            android:layout_width="237dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:hint="Student Number"
-            android:textSize="15sp" />
+            android:paddingStart="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnSignUp"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="@+id/btnSignUp"
+            tools:layout_editor_absoluteY="435dp" />
 
         <EditText
             android:id="@+id/etPasswordReg"
-            android:layout_width="237dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:hint="Password"
-            android:textSize="15sp" />
+            android:paddingStart="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/etStudentNumReg"
+            app:layout_constraintHorizontal_bias="0.933"
+            app:layout_constraintStart_toStartOf="@+id/etStudentNumReg"
+            app:layout_constraintTop_toTopOf="@+id/etLNameReg" />
 
         <EditText
             android:id="@+id/etLNameReg"
-            android:layout_width="237dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="35dp"
             android:background="@color/white"
             android:hint="Last Name"
-            android:textSize="15sp" />
+            android:paddingStart="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/etPasswordReg"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toStartOf="@+id/etPasswordReg"
+            app:layout_constraintTop_toTopOf="@+id/etFNameReg" />
 
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:backgroundTint="#0086CA"
             android:text="Sign Up"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
 
-
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="515dp" />
     </LinearLayout>
 
 
