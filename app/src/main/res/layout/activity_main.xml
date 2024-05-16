@@ -12,16 +12,17 @@
         android:id="@+id/btnSignInHomePage"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="488dp"
         android:backgroundTint="#0086CA"
         android:text="Log in"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></Button>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711"></Button>
 
     <Button
         android:id="@+id/btnSignUpHomePage"
@@ -33,9 +34,11 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignInHomePage"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/btnSignInHomePage"
+        app:layout_constraintVertical_bias="0.059"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

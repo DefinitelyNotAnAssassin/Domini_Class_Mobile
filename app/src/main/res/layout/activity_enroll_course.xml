@@ -29,22 +29,27 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/etCourseId"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="@+id/etCourseId"
             app:layout_constraintTop_toBottomOf="@+id/etCourseId"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/etCourseId"
             android:layout_width="231dp"
             android:layout_height="40dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="56dp"
             android:background="@color/white"
             android:hint="214AW56 - 24D5 - SH2JN4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="36dp" />
+            app:layout_constraintVertical_bias="0.085"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
