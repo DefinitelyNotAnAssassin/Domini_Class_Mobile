@@ -28,7 +28,7 @@
                 android:backgroundTint="#FFDE59"
                 android:text="Enroll a Course"
                 android:textColor="@color/black"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
