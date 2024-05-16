@@ -53,7 +53,7 @@ public class EnrollCourse extends AppCompatActivity {
         btnSwitchToJoinCourse.setOnClickListener(v -> {
             StringRequest request = new StringRequest(
                     Request.Method.POST,
-                    "http://dominiclass.pythonanywhere.com/course/enroll/",
+                    "http://192.168.1.6:8000/course/enroll/",
                     response -> {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);

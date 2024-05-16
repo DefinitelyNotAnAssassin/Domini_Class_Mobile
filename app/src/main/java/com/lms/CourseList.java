@@ -41,6 +41,7 @@ public class CourseList extends AppCompatActivity {
 
     ListView lvEnrolledCourseList;
     String currentUser;
+
     ArrayList<Map<String, String>> courses = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +69,13 @@ public class CourseList extends AppCompatActivity {
 
         StringRequest request = new StringRequest(
                 Request.Method.POST,
-                "http://dominiclass.pythonanywhere.com/course/getCourse",
+                "http://192.168.1.6:8000/course/getCourse",
                 response -> {
                  try {
     JSONObject jsonResponse = new JSONObject(response);
     JSONArray courseArray = jsonResponse.getJSONArray("course");
+
+                     System.out.println(courseArray);
 
     for (int x = 0; x < courseArray.length(); x++) {
         JSONObject course = courseArray.getJSONObject(x);
@@ -80,6 +83,7 @@ public class CourseList extends AppCompatActivity {
         courseMap.put("courseName", course.getString("course_name"));
         courseMap.put("courseDescription", course.getString("course_description"));
         courseMap.put("couresCode", course.getString("course_code"));
+        courseMap.put("id", course.getString("id"));
         courses.add(courseMap);
     }
 

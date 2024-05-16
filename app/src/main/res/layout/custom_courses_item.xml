@@ -10,6 +10,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCourseItem"
         android:layout_width="411dp"
         android:layout_height="174dp"
         android:background="@drawable/course_item"
