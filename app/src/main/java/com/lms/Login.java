@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> {
             StringRequest request = new StringRequest(
                     Request.Method.POST,
-                    "http://https://dominiclass.pythonanywhere.com/login/",
+                    "http://192.168.1.6:8000/login",
                     response -> {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);

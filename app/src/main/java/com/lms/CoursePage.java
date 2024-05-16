@@ -1,6 +1,7 @@
 package com.lms;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +27,13 @@ public class CoursePage extends AppCompatActivity {
 
 
     String courseId;
+
+
     ArrayList<Map<String, String>> courseMaterials = new ArrayList<>();
     ArrayList<Map<String, String>> courseActivities = new ArrayList<>();
+
+    ListView lvForLessons;
+    ListView lvForActivities;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,8 @@ public class CoursePage extends AppCompatActivity {
         });
 
         courseId = getIntent().getStringExtra("courseId");
-
+        lvForLessons = findViewById(R.id.lvForLessons);
+        lvForActivities = findViewById(R.id.lvForActivities);
         RequestQueue queue = Volley.newRequestQueue(this);
 
 
@@ -62,8 +69,8 @@ public class CoursePage extends AppCompatActivity {
                                 Map<String, String> courseMaterialMap = new HashMap<>();
                                 // Assuming the course material object has fields "id", "name", "description"
                                 courseMaterialMap.put("id", courseMaterial.getString("id"));
-                                courseMaterialMap.put("name", courseMaterial.getString("name"));
-                                courseMaterialMap.put("description", courseMaterial.getString("description"));
+                                courseMaterialMap.put("name", courseMaterial.getString("material_name"));
+                                courseMaterialMap.put("description", courseMaterial.getString("material_description"));
                                 courseMaterials.add(courseMaterialMap);
                             }
 
@@ -83,6 +90,9 @@ public class CoursePage extends AppCompatActivity {
                             }
 
 
+
+                        lvForActivities.setAdapter(new CustomCurrentActivityAdapter(this, courseActivities));
+                        lvForLessons.setAdapter(new CustomCurrentCourseLessonAdapter(this, courseMaterials));
                         System.out.println(courseMaterials);
                         System.out.println(courseActivities);
 
