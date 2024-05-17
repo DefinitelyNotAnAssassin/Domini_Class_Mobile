@@ -44,7 +44,7 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="12dp"
                 android:backgroundTint="#FFDE59"
-                android:text="Track Activities"
+                android:text="View Grades"
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
