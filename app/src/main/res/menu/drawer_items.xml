@@ -19,6 +19,10 @@
         android:title="Missing Activities" />
 
     <item
+        android:id="@+id/nav_Grades"
+        android:title="Grades" />
+
+    <item
         android:id="@+id/nav_logout"
         android:title="Log Out" />
 </menu>

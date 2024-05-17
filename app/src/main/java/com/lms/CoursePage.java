@@ -1,18 +1,25 @@
 package com.lms;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +40,9 @@ public class CoursePage extends AppCompatActivity {
     ArrayList<Map<String, String>> courseMaterials = new ArrayList<>();
     ArrayList<Map<String, String>> courseActivities = new ArrayList<>();
 
+    DrawerLayout drawer_Layout;
+    ImageButton button_drawer_toggle;
+    NavigationView navigationView;
     ListView lvForLessons;
     ListView lvForActivities;
     @Override
@@ -52,6 +62,54 @@ public class CoursePage extends AppCompatActivity {
         lvForActivities = findViewById(R.id.lvForActivities);
         RequestQueue queue = Volley.newRequestQueue(this);
 
+        navigationView = findViewById(R.id.navigationView);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Handle navigation view item clicks here.
+                System.out.println("Clicked " + item);
+                String id = item.toString();
+
+                // if id.equals("home") then start an intent and activity
+                // the following values are Home, Enroll Course, Finished Activities, Missing Activities, Log Out
+
+
+                if (id.equals("Home")) {
+                    Intent intent = new Intent(CoursePage.this, CoursesMain.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Enroll Course")) {
+                    Intent intent = new Intent(CoursePage.this, EnrollCourse.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Finished Activities")) {
+                    Intent intent = new Intent(CoursePage.this, FinishedActivities.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Missing Activities")) {
+                    Intent intent = new Intent(CoursePage.this, MissingActivities.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Log Out")) {
+                    Intent intent = new Intent(CoursePage.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else if (id.equals("Grades")){
+                    Intent intent = new Intent(CoursePage.this, ViewGrades.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(CoursePage.this, "Invalid Option", Toast.LENGTH_SHORT).show();
+                }
+
+
+                // Close the navigation drawer when an item is selected.
+
+                return true;
+            }
+        });
 
         StringRequest request = new StringRequest(
                 Request.Method.POST,

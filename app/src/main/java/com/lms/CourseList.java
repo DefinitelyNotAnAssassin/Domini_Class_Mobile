@@ -59,9 +59,9 @@ public class CourseList extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_course_list);
 
-            drawer_Layout = findViewById(R.id.drawerLayout);
-            button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
-            navigationView = findViewById(R.id.navigationView);
+        drawer_Layout = findViewById(R.id.drawerLayout);
+        button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
+        navigationView = findViewById(R.id.navigationView);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -93,7 +93,13 @@ public class CourseList extends AppCompatActivity {
                 } else if (id.equals("Log Out")) {
                     Intent intent = new Intent(CourseList.this, MainActivity.class);
                     startActivity(intent);
-                } else {
+                }
+                else if (id.equals("Grades")){
+                    Intent intent = new Intent(CourseList.this, ViewGrades.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                }
+                else {
                     Toast.makeText(CourseList.this, "Invalid Option", Toast.LENGTH_SHORT).show();
                 }
 
