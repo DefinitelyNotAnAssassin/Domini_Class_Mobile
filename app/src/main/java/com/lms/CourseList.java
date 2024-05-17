@@ -56,6 +56,7 @@ public class CourseList extends AppCompatActivity {
         setContentView(R.layout.activity_course_list);
 
 
+
             drawer_Layout = findViewById(R.id.drawerLayout);
             button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
             navigationView = findViewById(R.id.navigationView); // replace with your NavigationView id
@@ -80,11 +81,7 @@ public class CourseList extends AppCompatActivity {
                         navigationView.setCheckedItem(R.id.nav_home);
                         Intent intent = new Intent(CourseList.this, CourseList.class);
                         startActivity(intent);
-
-                        //Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
                     } else if (id == R.id.nav_eroll) {
-                        Toast.makeText(CourseList.this, "Home", Toast.LENGTH_SHORT).show();
-
                         navigationView.setCheckedItem(R.id.nav_eroll);
                         Intent intent = new Intent(CourseList.this, EnrollCourse.class);
                         startActivity(intent);
@@ -92,6 +89,7 @@ public class CourseList extends AppCompatActivity {
                         navigationView.setCheckedItem(R.id.nav_finishedActs);
                         Intent intent = new Intent(CourseList.this, FinishedActivities.class);
                         startActivity(intent);
+
                     } else if (id == R.id.nav_MissingActs) {
                         navigationView.setCheckedItem(R.id.nav_MissingActs);
                         Intent intent = new Intent(CourseList.this, MissingActivities.class);
