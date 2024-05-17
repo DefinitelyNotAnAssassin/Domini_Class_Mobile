@@ -16,6 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CustomMissingActivities"
+            android:exported="false"
+            android:theme="@style/Theme.LMS" />
+        <activity
             android:name=".ActivityPage"
             android:exported="false" />
         <activity
@@ -34,7 +38,6 @@
         <activity
             android:name=".TrackActivities"
             android:exported="false" />
-
         <activity
             android:name=".CoursePage"
             android:exported="false" />

@@ -24,11 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class CoursesMain extends AppCompatActivity {
 
-    ConstraintLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
-    Menu menu;
-    TextView textView;
+
     Button btnSwitchToEnrollCourse;
     Button btnSwitchToCourseList;
     String currentUser;
