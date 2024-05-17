@@ -54,17 +54,14 @@ public class CourseList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_course_list);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
 
             drawer_Layout = findViewById(R.id.drawerLayout);
             button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
             navigationView = findViewById(R.id.navigationView); // replace with your NavigationView id
 
             button_drawer_toggle.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View v) {
                     drawer_Layout.openDrawer(GravityCompat.START);
@@ -73,6 +70,7 @@ public class CourseList extends AppCompatActivity {
             });
 
             navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
 
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -85,6 +83,8 @@ public class CourseList extends AppCompatActivity {
 
                         //Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
                     } else if (id == R.id.nav_eroll) {
+                        Toast.makeText(CourseList.this, "Home", Toast.LENGTH_SHORT).show();
+
                         navigationView.setCheckedItem(R.id.nav_eroll);
                         Intent intent = new Intent(CourseList.this, EnrollCourse.class);
                         startActivity(intent);
