@@ -1,44 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-
-    android:background="@drawable/header">
-
+    >
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Castillo"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="wrap_content"
-            android:text="Sherry Jane"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
+        android:layout_height="176dp"
+        android:orientation="vertical"
+        android:background="@drawable/header_backg"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/nav_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOME"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/nav_finished_acts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FINISHED ACTIVITIES"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_missing_acts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MISSING ACTIVITIES"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_grades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRADES"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGOUT"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+</LinearLayout>
