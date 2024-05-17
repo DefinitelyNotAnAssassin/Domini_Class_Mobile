@@ -47,6 +47,10 @@ public class CourseList extends AppCompatActivity {
     NavigationView navigationView;
 
 
+
+
+
+
     ArrayList<Map<String, String>> courses = new ArrayList<>();
 
     @Override
@@ -55,54 +59,52 @@ public class CourseList extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_course_list);
 
-
-
             drawer_Layout = findViewById(R.id.drawerLayout);
             button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
-            navigationView = findViewById(R.id.navigationView); // replace with your NavigationView id
+            navigationView = findViewById(R.id.navigationView);
 
-            button_drawer_toggle.setOnClickListener(new View.OnClickListener() {
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Handle navigation view item clicks here.
+                System.out.println("Clicked " + item);
+                String id = item.toString();
 
-                @Override
-                public void onClick(View v) {
-                    drawer_Layout.openDrawer(GravityCompat.START);
+                // if id.equals("home") then start an intent and activity
+                // the following values are Home, Enroll Course, Finished Activities, Missing Activities, Log Out
+
+
+                if (id.equals("Home")) {
+                    Intent intent = new Intent(CourseList.this, CoursesMain.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Enroll Course")) {
+                    Intent intent = new Intent(CourseList.this, EnrollCourse.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Finished Activities")) {
+                    Intent intent = new Intent(CourseList.this, FinishedActivities.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Missing Activities")) {
+                    Intent intent = new Intent(CourseList.this, MissingActivities.class);
+                    intent.putExtra("currentUser", currentUser);
+                    startActivity(intent);
+                } else if (id.equals("Log Out")) {
+                    Intent intent = new Intent(CourseList.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CourseList.this, "Invalid Option", Toast.LENGTH_SHORT).show();
                 }
 
-            });
 
-            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-                @SuppressLint("NonConstantResourceId")
+                // Close the navigation drawer when an item is selected.
 
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    int id = item.getItemId();
+                return true;
+            }
+        });
 
-                    if (id == R.id.nav_home) {
-                        navigationView.setCheckedItem(R.id.nav_home);
-                        Intent intent = new Intent(CourseList.this, CourseList.class);
-                        startActivity(intent);
-                    } else if (id == R.id.nav_eroll) {
-                        navigationView.setCheckedItem(R.id.nav_eroll);
-                        Intent intent = new Intent(CourseList.this, EnrollCourse.class);
-                        startActivity(intent);
-                    } else if (id == R.id.nav_finishedActs) {
-                        navigationView.setCheckedItem(R.id.nav_finishedActs);
-                        Intent intent = new Intent(CourseList.this, FinishedActivities.class);
-                        startActivity(intent);
-
-                    } else if (id == R.id.nav_MissingActs) {
-                        navigationView.setCheckedItem(R.id.nav_MissingActs);
-                        Intent intent = new Intent(CourseList.this, MissingActivities.class);
-                        startActivity(intent);
-                    }
-
-                    drawer_Layout.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-            });
-
-
-            Intent i = getIntent();
+        Intent i = getIntent();
             currentUser = i.getStringExtra("currentUser");
 
             lvEnrolledCourseList = findViewById(R.id.lvEnrolledCourseList);
@@ -157,5 +159,12 @@ public class CourseList extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        System.out.println("Clicked");
+        return super.onOptionsItemSelected(item);
     }
 }
