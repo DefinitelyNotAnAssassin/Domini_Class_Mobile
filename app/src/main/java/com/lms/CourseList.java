@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,15 +39,16 @@ import java.util.Map;
 public class CourseList extends AppCompatActivity {
 
 
-
-
     ListView lvEnrolledCourseList;
     String currentUser;
 
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
+    DrawerLayout drawer_Layout;
+    ImageButton button_drawer_toggle;
+    NavigationView navigationView;
+
 
     ArrayList<Map<String, String>> courses = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,88 +60,104 @@ public class CourseList extends AppCompatActivity {
             return insets;
         });
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+            drawer_Layout = findViewById(R.id.drawerLayout);
+            button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
+            navigationView = findViewById(R.id.navigationView); // replace with your NavigationView id
 
-        drawerLayout = findViewById(R.id.drawer_layout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+            button_drawer_toggle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    drawer_Layout.openDrawer(GravityCompat.START);
+                }
 
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
+            });
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(item -> {
-            // Handle navigation view item clicks here.
-            int id = item.getItemId();
+            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
-            // Handle the actions for the different menu items here
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    int id = item.getItemId();
 
-            drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
-        });
+                    if (id == R.id.nav_home) {
+                        navigationView.setCheckedItem(R.id.nav_home);
+                        Intent intent = new Intent(CourseList.this, CourseList.class);
+                        startActivity(intent);
 
-
-
-        Intent i = getIntent();
-        currentUser = i.getStringExtra("currentUser");
-
-        lvEnrolledCourseList = findViewById(R.id.lvEnrolledCourseList);
-
-
-
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-
-        StringRequest request = new StringRequest(
-                Request.Method.POST,
-                "http://dominiclass.pythonanywhere.com/course/getCourse",
-                response -> {
-                    try {
-                        JSONObject jsonResponse = new JSONObject(response);
-                        JSONArray courseArray = jsonResponse.getJSONArray("course");
-
-                        System.out.println(courseArray);
-
-                        for (int x = 0; x < courseArray.length(); x++) {
-                            JSONObject course = courseArray.getJSONObject(x);
-                            Map<String, String> courseMap = new HashMap<>();
-                            courseMap.put("courseName", course.getString("course_name"));
-                            courseMap.put("courseDescription", course.getString("course_description"));
-                            courseMap.put("couresCode", course.getString("course_code"));
-                            courseMap.put("id", course.getString("id"));
-                            courses.add(courseMap);
-                        }
-
-
-                        CustomCoursesItemAdapter adapter = new CustomCoursesItemAdapter(this, courses, currentUser);
-                        lvEnrolledCourseList.setAdapter(adapter);
-
-
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                        //Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                    } else if (id == R.id.nav_eroll) {
+                        navigationView.setCheckedItem(R.id.nav_eroll);
+                        Intent intent = new Intent(CourseList.this, EnrollCourse.class);
+                        startActivity(intent);
+                    } else if (id == R.id.nav_finishedActs) {
+                        navigationView.setCheckedItem(R.id.nav_finishedActs);
+                        Intent intent = new Intent(CourseList.this, FinishedActivities.class);
+                        startActivity(intent);
+                    } else if (id == R.id.nav_MissingActs) {
+                        navigationView.setCheckedItem(R.id.nav_MissingActs);
+                        Intent intent = new Intent(CourseList.this, MissingActivities.class);
+                        startActivity(intent);
                     }
-                },
-                error -> {
-                    System.out.println(error);
-                }) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("currentUser", currentUser);
-                return params;
-            }
-        };
 
-        queue.add(request);
+                    drawer_Layout.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+            });
+
+
+            Intent i = getIntent();
+            currentUser = i.getStringExtra("currentUser");
+
+            lvEnrolledCourseList = findViewById(R.id.lvEnrolledCourseList);
+
+
+            RequestQueue queue = Volley.newRequestQueue(this);
+
+
+            StringRequest request = new StringRequest(
+                    Request.Method.POST,
+                    "http://dominiclass.pythonanywhere.com/course/getCourse",
+                    response -> {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            JSONArray courseArray = jsonResponse.getJSONArray("course");
+
+                            System.out.println(courseArray);
+
+                            for (int x = 0; x < courseArray.length(); x++) {
+                                JSONObject course = courseArray.getJSONObject(x);
+                                Map<String, String> courseMap = new HashMap<>();
+                                courseMap.put("courseName", course.getString("course_name"));
+                                courseMap.put("courseDescription", course.getString("course_description"));
+                                courseMap.put("couresCode", course.getString("course_code"));
+                                courseMap.put("id", course.getString("id"));
+                                courses.add(courseMap);
+                            }
+
+
+                            CustomCoursesItemAdapter adapter = new CustomCoursesItemAdapter(this, courses, currentUser);
+                            lvEnrolledCourseList.setAdapter(adapter);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    },
+                    error -> {
+                        System.out.println(error);
+                    }) {
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("currentUser", currentUser);
+                    return params;
+                }
+            };
+
+            queue.add(request);
+
 
 
 
 
     }
-
-
-
-
 }
