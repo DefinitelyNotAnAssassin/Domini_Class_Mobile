@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnSignInHomePage, btnSignUpHomePage;
+    Button btnSignInHomePage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnSignInHomePage = findViewById(R.id.btnSignInHomePage);
-        btnSignUpHomePage = findViewById(R.id.btnSignUpHomePage);
+
 
         // intent to the login page
         btnSignInHomePage.setOnClickListener(v -> {
@@ -37,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnSignUpHomePage.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Registration.class);
-            startActivity(intent);
-        });
 
     }
 

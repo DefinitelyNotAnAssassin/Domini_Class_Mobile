@@ -25,8 +25,6 @@ import java.util.Map;
 
 public class Login extends AppCompatActivity {
 
-
-
     EditText etStudentNumLogin;
     EditText etPasswordLogin;
     Button btnLogin;
@@ -41,8 +39,6 @@ public class Login extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
 
         etStudentNumLogin = findViewById(R.id.etStudentNumLogin);
         etPasswordLogin = findViewById(R.id.etPasswordLogin);
@@ -75,9 +71,6 @@ public class Login extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-
-
-
                     },
                     error -> {
                         System.out.println(error);
@@ -90,7 +83,6 @@ public class Login extends AppCompatActivity {
                     return params;
                 }
             };
-
             queue.add(request);
         });
     }
