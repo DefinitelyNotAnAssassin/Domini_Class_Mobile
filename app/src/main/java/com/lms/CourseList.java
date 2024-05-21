@@ -59,8 +59,7 @@ public class CourseList extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_course_list);
 
-        drawer_Layout = findViewById(R.id.drawerLayout);
-        button_drawer_toggle = findViewById(R.id.buttonDrawerToggle);
+
         navigationView = findViewById(R.id.navigationView);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

@@ -98,8 +98,6 @@ public class LessonPage extends AppCompatActivity {
                 }
 
 
-                // Close the navigation drawer when an item is selected.
-
                 return true;
             }
         });

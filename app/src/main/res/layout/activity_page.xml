@@ -8,56 +8,80 @@
     android:background="@drawable/activity_page"
     tools:context=".CustomActivityPage">
 
-    <TextView
-        android:id="@+id/tvActivityTitleCustomActPage"
-        android:layout_width="325dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="381dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        app:layout_constraintVertical_bias="0.891">
+
+        <TextView
+            android:id="@+id/tvActivityTitleCustomActPage"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.557"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.079" />
 
         <TextView
             android:id="@+id/tvQuestionCustomActPage"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginBottom="50dp"
-            android:textSize="13sp" />
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
 
-        <EditText
-            android:id="@+id/etAnswerCustomActPage"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
+        <ScrollView
+            android:layout_width="335dp"
+            android:layout_height="297dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.709">
+
+            <EditText
+                android:id="@+id/etAnswerCustomActPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.434" />
+        </ScrollView>
 
         <Button
             android:id="@+id/btnSubmitCustomActPage"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:backgroundTint="#0086CA"
             android:text="Submit"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.934" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
