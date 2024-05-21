@@ -8,6 +8,12 @@
     android:background="@drawable/viewgrades_bg"
     tools:context=".ViewGrades">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
     <LinearLayout
         android:layout_width="353dp"
         android:layout_height="365dp"
@@ -23,6 +29,8 @@
             android:layout_height="match_parent"/>
 
     </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <com.google.android.material.navigation.NavigationView
