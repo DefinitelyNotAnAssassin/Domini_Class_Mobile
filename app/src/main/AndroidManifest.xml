@@ -15,6 +15,7 @@
         android:theme="@style/Theme.LMS"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
             android:name=".CustomMissingActivities"
             android:exported="false"
@@ -34,9 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".LessonPage"
-            android:exported="false" />
-        <activity
-            android:name=".TrackActivities"
             android:exported="false" />
         <activity
             android:name=".CoursePage"
@@ -64,6 +62,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
