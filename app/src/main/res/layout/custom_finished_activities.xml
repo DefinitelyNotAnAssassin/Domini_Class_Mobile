@@ -3,34 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:padding="5dp"
+    android:orientation="vertical"
     >
 
-    <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="98dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/tvFinishedActivityTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tvFinishedIdCourse"
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="15dp"
-            android:textSize="15sp" />
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingStart="10dp"
+            android:textAlignment="viewStart"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvFinishedActivityTitle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:textAlignment="viewStart"
+        android:textSize="13sp"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+
 </LinearLayout>

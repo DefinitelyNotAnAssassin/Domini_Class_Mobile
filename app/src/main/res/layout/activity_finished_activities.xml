@@ -11,8 +11,9 @@
 
     <ListView
         android:id="@+id/lvFinishedActs"
-        android:layout_width="329dp"
-        android:layout_height="379dp"
+        android:layout_width="372dp"
+        android:layout_height="391dp"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
