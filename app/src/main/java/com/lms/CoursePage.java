@@ -40,8 +40,6 @@ public class CoursePage extends AppCompatActivity {
     ArrayList<Map<String, String>> courseMaterials = new ArrayList<>();
     ArrayList<Map<String, String>> courseActivities = new ArrayList<>();
 
-    DrawerLayout drawer_Layout;
-    ImageButton button_drawer_toggle;
     NavigationView navigationView;
     ListView lvForLessons;
     ListView lvForActivities;

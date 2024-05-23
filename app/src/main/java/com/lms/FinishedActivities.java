@@ -40,6 +40,8 @@ public class FinishedActivities extends AppCompatActivity {
         currentUser = getIntent().getStringExtra("currentUser");
         lvFinishedActs = findViewById(R.id.lvFinishedActs);
 
+
+
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(
                 Request.Method.POST,

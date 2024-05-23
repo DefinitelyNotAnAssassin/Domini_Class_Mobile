@@ -11,20 +11,29 @@
     tools:context=".CourseList">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
         <ListView
             android:id="@+id/lvEnrolledCourseList"
-            android:layout_width="355dp"
-            android:layout_height="250dp"
-            android:layout_marginBottom="210dp"
-            android:layout_marginTop="140dp">
+            android:layout_width="418dp"
+            android:layout_height="459dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.343">
 
         </ListView>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigationView"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/header"
