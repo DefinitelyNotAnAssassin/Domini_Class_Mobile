@@ -29,7 +29,7 @@
             app:layout_constraintHorizontal_bias="0.411"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.241" />
+            app:layout_constraintVertical_bias="0.192" />
 
         <EditText
             android:id="@+id/etPasswordLogin"
